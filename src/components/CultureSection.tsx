@@ -1,5 +1,5 @@
 import React from 'react';
-import { cultureData } from '../mock';
+import { cultureData } from '../data';
 
 const CultureSection = () => {
   return (

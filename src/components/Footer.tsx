@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
-import { homestayInfo } from '../mock';
+import { homestayInfo } from '../data';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

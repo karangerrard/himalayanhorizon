@@ -41,7 +41,7 @@
   font-size: clamp(2.25rem, 5vw, 4.5rem);
   line-height: 0.9;
   letter-spacing: -0.02em;
-  color: var(--text-primary);
+  color: rgb(255, 255, 255);
 }
 
 .heading-2 {
@@ -88,8 +88,8 @@
 
 /* Button Styles */
 .btn-primary {
-  background: linear-gradient(to bottom right, var(--accent-primary), var(--accent-strong));
-  color: white;
+  background: linear-gradient(to bottom right, rgb(255, 255, 255), var(--accent-strong));
+  color: var(--text-primary);
   border: none;
   border-radius: 9999px;
   padding: 14px 24px;
@@ -117,7 +117,7 @@
 }
 
 .btn-secondary {
-  background: transparent;
+  background: linear-gradient(to bottom right, rgb(255, 255, 255), var(--accent-strong));
   color: var(--text-primary);
   border: 1px solid var(--border-light);
   border-radius: 9999px;
@@ -136,8 +136,8 @@
 }
 
 .btn-secondary:hover {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: var(--border-medium);
+  transform: scale(1.02);
+  box-shadow: 0px 4px 8px rgba(148, 242, 127, 0.3);
 }
 
 .btn-secondary:active {

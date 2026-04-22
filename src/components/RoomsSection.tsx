@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Users, Check, Image } from 'lucide-react';
-import { roomsData } from '../mock';
+import { roomsData } from '../data';
 import GalleryModal from './GalleryModal';
 
 const RoomsSection = () => {

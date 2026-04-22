@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Culture', href: '#culture' },
     { name: 'Rooms', href: '#rooms' },
-    { name: 'Travel', href: '#travel' },
+    { name: 'Directions', href: '#directions' },
     { name: 'Attractions', href: '#attractions' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' }
@@ -24,32 +24,70 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('#home');
+      const roomsSection = document.querySelector('#rooms');
+
+      if (!heroSection || !roomsSection) return;
+
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      
+      // If scrolled past hero section, change colors
+      setIsScrolled(heroBottom < 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navbarStyle = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 50,
+    background: isScrolled ? 'var(--primary)' : 'rgba(0, 0, 0, 0.2)',
+    backdropFilter: 'blur(16px)',
+    WebkitBackdropFilter: 'blur(16px)',
+    borderBottom: '1px solid var(--border-light)',
+    minHeight: 'clamp(1.75rem, 7vw, 2.5rem)',
+    transition: 'background 0.3s ease'
+  };
+
+  const logoStyle = {
+    fontSize: 'clamp(0.95rem, 4vw, 1.25rem)',
+    fontWeight: 700,
+    color: isScrolled ? 'var(--text-primary)' : 'rgb(255, 255, 255)',
+    textDecoration: 'none',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: 'clamp(120px, 50vw, 400px)',
+    transition: 'color 0.3s ease'
+  };
+
+  const linkStyle = {
+    color: isScrolled ? 'var(--text-primary)' : 'rgb(255, 255, 255)',
+    textDecoration: 'none',
+    fontFamily: 'system-ui, sans-serif',
+    fontSize: 'clamp(0.8rem, 1.5vw, 1rem)',
+    fontWeight: 500,
+    padding: 'clamp(6px, 1vw, 12px) clamp(8px, 1.5vw, 12px)',
+    borderRadius: '9999px',
+    transition: 'background 0.2s ease, color 0.3s ease',
+    whiteSpace: 'nowrap'
+  };
+
   return (
-    <nav
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        background: 'rgba(255, 255, 255, 0.6)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: '1px solid var(--border-light)'
-      }}
-    >
-      <div className="container" style={{ padding: '1rem 1.5rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+    <nav style={navbarStyle}>
+      <div className="container" style={{ padding: 'clamp(0.5rem, 2vw, 0.75rem) clamp(.5rem, 3vw, 1rem)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 'auto' }}>
           {/* Logo */}
           <a
             href="#home"
             onClick={(e) => scrollToSection(e, '#home')}
-            style={{
-              fontSize: '1.25rem',
-              fontWeight: 700,
-              color: 'var(--text-primary)',
-              textDecoration: 'none'
-            }}
+            style={logoStyle}
           >
             Himalayan Horizon Deohari
           </a>
@@ -58,7 +96,7 @@ const Navbar = () => {
           <div
             style={{
               display: 'none',
-              gap: '0.5rem',
+              gap: 'clamp(0.25rem, 1vw, 0.5rem)',
               alignItems: 'center'
             }}
             className="desktop-nav"
@@ -68,23 +106,14 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                style={{
-                  color: 'var(--text-muted)',
-                  textDecoration: 'none',
-                  fontFamily: 'system-ui, sans-serif',
-                  fontSize: '1rem',
-                  fontWeight: 500,
-                  padding: '6px 12px',
-                  borderRadius: '9999px',
-                  transition: 'background 0.2s ease, color 0.2s ease'
-                }}
+                style={linkStyle}
                 onMouseEnter={(e) => {
-                  e.target.style.background = 'rgba(0, 0, 0, 0.05)';
-                  e.target.style.color = 'var(--text-primary)';
+                  e.target.style.background = isScrolled ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.15)';
+                  e.target.style.color = isScrolled ? 'var(--text-primary)' : 'rgb(255, 255, 255)';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.background = 'transparent';
-                  e.target.style.color = 'var(--text-muted)';
+                  e.target.style.color = isScrolled ? 'var(--text-primary)' : 'rgb(255, 255, 255)';
                 }}
               >
                 {link.name}
@@ -96,12 +125,17 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             style={{
-              display: 'none',
+              display: 'flex',
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
-              padding: '0.5rem',
-              color: 'var(--text-primary)'
+              padding: 'clamp(0.4rem, 1vw, 0.5rem)',
+              color: isScrolled ? 'var(--text-primary)' : 'rgb(255, 255, 255)',
+              minWidth: 'clamp(32px, 8vw, 40px)',
+              minHeight: 'clamp(32px, 8vw, 40px)',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'color 0.3s ease'
             }}
             className="mobile-menu-btn"
           >
@@ -115,9 +149,9 @@ const Navbar = () => {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '0.5rem',
-              marginTop: '1rem',
-              paddingTop: '1rem',
+              gap: 'clamp(0.25rem, 1vw, 0.5rem)',
+              marginTop: 'clamp(0.75rem, 2vw, 1rem)',
+              paddingTop: 'clamp(0.75rem, 2vw, 1rem)',
               borderTop: '1px solid var(--border-light)'
             }}
             className="mobile-nav"
@@ -128,22 +162,20 @@ const Navbar = () => {
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
                 style={{
-                  color: 'var(--text-muted)',
+                  color: isScrolled ? 'var(--text-primary)' : 'rgb(255, 255, 255)',
                   textDecoration: 'none',
                   fontFamily: 'system-ui, sans-serif',
-                  fontSize: '1rem',
+                  fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                   fontWeight: 500,
-                  padding: '12px',
+                  padding: 'clamp(8px, 2vw, 12px)',
                   borderRadius: '8px',
-                  transition: 'background 0.2s ease, color 0.2s ease'
+                  transition: 'background 0.2s ease, color 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = 'rgba(0, 0, 0, 0.05)';
-                  e.target.style.color = 'var(--text-primary)';
+                  e.target.style.background = isScrolled ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.15)';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.background = 'transparent';
-                  e.target.style.color = 'var(--text-muted)';
                 }}
               >
                 {link.name}
@@ -167,7 +199,7 @@ const Navbar = () => {
             display: none !important;
           }
           .mobile-menu-btn {
-            display: block !important;
+            display: flex !important;
           }
         }
       `}</style>

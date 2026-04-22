@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { galleryImages } from '../mock';
+import { galleryImages } from '../data';
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin } from 'lucide-react';
-import { homestayInfo } from '../mock';
+import { homestayInfo } from '../data';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -28,26 +28,30 @@ const Hero = () => {
         justifyContent: 'center',
         position: 'relative',
         textAlign: 'center',
-        padding: '7rem 1.5rem 3rem'
+        padding: 'clamp(4rem, 10vw, 7rem) clamp(1rem, 5vw, 1.5rem) clamp(2rem, 5vw, 3rem)',
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/punkdrik_hero.avif)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
       }}
     >
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ maxWidth: 'clamp(280px, 90vw, 800px)', margin: '0 auto' }}>
         <div
           style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
             background: 'var(--accent-wash)',
-            padding: '0.5rem 1rem',
+            padding: 'clamp(0.4rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1rem)',
             borderRadius: '9999px',
-            marginBottom: '2rem'
+            marginBottom: 'clamp(1.5rem, 4vw, 2rem)'
           }}
         >
-          <MapPin size={16} style={{ color: 'var(--accent-text)' }} />
+          <MapPin size={16} style={{ color: 'rgb(255, 255, 255)' }} />
           <span
             style={{
-              color: 'var(--accent-text)',
-              fontSize: '0.875rem',
+              color: 'rgb(255, 255, 255)',
+              fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
               fontWeight: 500
             }}
           >
@@ -55,18 +59,33 @@ const Hero = () => {
           </span>
         </div>
 
-        <h1 className="heading-1" style={{ marginBottom: '1.5rem' }}>
+        <h1 
+          className="heading-1" 
+          style={{ 
+            marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
+            fontSize: 'clamp(1.75rem, 8vw, 3.5rem)',
+            lineHeight: 1.2
+          }}
+        >
           {homestayInfo.name}
         </h1>
 
-        <p className="body-large" style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+        <p 
+          className="body-large" 
+          style={{ 
+            color: 'rgb(255,255,255)', 
+            marginBottom: 'clamp(1.5rem, 4vw, 2rem)',
+            fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)',
+            lineHeight: 1.6
+          }}
+        >
           {homestayInfo.description}
         </p>
 
         <div
           style={{
             display: 'flex',
-            gap: '1rem',
+            gap: 'clamp(0.5rem, 2vw, 1rem)',
             justifyContent: 'center',
             flexWrap: 'wrap'
           }}

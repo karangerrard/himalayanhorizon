@@ -1,8 +1,8 @@
 import React from 'react';
 import { Plane, Car, Train, Navigation } from 'lucide-react';
-import { travelInfo } from '../mock';
+import { travelInfo } from '../data';
 
-const TravelSection = () => {
+const DirectionsSection = () => {
   const iconMap = {
     'By Air': Plane,
     'By Road': Car,
@@ -11,15 +11,14 @@ const TravelSection = () => {
   };
 
   const travelOptions = [
-    travelInfo.byAir,
-    travelInfo.byRoad,
-    travelInfo.byTrain,
-    travelInfo.localTransport
-  ];
+  travelInfo.byAir as { title: string; description: string; distance?: string; routes?: string[] },
+  travelInfo.byRoad as { title: string; description: string; distance?: string; routes?: string[] },
+  travelInfo.byTrain as { title: string; description: string; distance?: string; routes?: string[] },
+];
 
   return (
     <section
-      id="travel"
+      id="directions"
       style={{
         padding: '4rem 1.5rem',
         background: 'var(--bg-page)'
@@ -71,7 +70,7 @@ const TravelSection = () => {
                     {option.distance}
                   </span>
                 )}
-                {option.routes && (
+                {option.routes?.length > 0 && (
                   <div style={{ marginTop: '1rem' }}>
                     {option.routes.map((route, idx) => (
                       <div key={idx} className="body-small" style={{ marginBottom: '0.5rem' }}>
@@ -89,4 +88,4 @@ const TravelSection = () => {
   );
 };
 
-export default TravelSection;
+export default DirectionsSection;

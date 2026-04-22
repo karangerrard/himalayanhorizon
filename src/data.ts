@@ -1,5 +1,7 @@
 // Mock data for Himachal Homestay Website
 
+import { formatDistance } from "date-fns";
+
 export const homestayInfo = {
   name: "Himalayan Horizon Deohari",
   tagline: "Experience Authentic Himachal Culture",
@@ -96,16 +98,13 @@ export const travelInfo = {
   byRoad: {
     title: "By Road",
     description: "Well-connected by road from Delhi (540 km), Chandigarh (310 km), and Shimla (250 km). Regular HRTC buses and private taxis available.",
-    routes: ["Delhi: 12-14 hours", "Chandigarh: 8-9 hours", "Shimla: 7-8 hours"]
+    routes: ["Delhi: 12-14 hours", "Chandigarh: 8-9 hours", "Shimla: 7-8 hours"],
+    distance: undefined
   },
   byTrain: {
     title: "By Train",
     description: "Nearest railway station is Joginder Nagar (125 km). Major station at Chandigarh (310 km) with better connectivity.",
     distance: "125 km to nearest station"
-  },
-  localTransport: {
-    title: "Local Transport",
-    description: "We provide pickup/drop services. Local taxis, bikes, and buses are readily available for exploring nearby areas."
   }
 };
 

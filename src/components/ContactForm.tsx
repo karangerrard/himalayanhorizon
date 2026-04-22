@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import WhatsAppBookingButton from './WhatsAppBookingButton';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { homestayInfo } from '../mock';
+import { homestayInfo } from '../data';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

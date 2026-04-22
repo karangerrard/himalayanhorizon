@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Image } from 'lucide-react';
-import { attractionsData } from '../mock';
+import { attractionsData } from '../data';
 import GalleryModal from './GalleryModal';
 
 const AttractionsSection = () => {
