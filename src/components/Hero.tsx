@@ -29,10 +29,9 @@ const Hero = () => {
         position: 'relative',
         textAlign: 'center',
         padding: 'clamp(4rem, 10vw, 7rem) clamp(1rem, 5vw, 1.5rem) clamp(2rem, 5vw, 3rem)',
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/punkdrik_hero.avif)',
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/punkdrik_hero.avif)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
       }}
     >
       <div style={{ maxWidth: 'clamp(280px, 90vw, 800px)', margin: '0 auto' }}>
