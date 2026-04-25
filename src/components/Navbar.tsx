@@ -25,21 +25,30 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.querySelector('#home');
-      const roomsSection = document.querySelector('#rooms');
+  let throttleTimeout;
+  
+  const handleScroll = () => {
+    const heroSection = document.querySelector('#home');
+    const roomsSection = document.querySelector('#rooms');
 
-      if (!heroSection || !roomsSection) return;
+    if (!heroSection || !roomsSection) return;
 
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
-      
-      // If scrolled past hero section, change colors
-      setIsScrolled(heroBottom < 100);
-    };
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    setIsScrolled(heroBottom < 100);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const throttledScroll = () => {
+    if (!throttleTimeout) {
+      handleScroll();
+      throttleTimeout = setTimeout(() => {
+        throttleTimeout = null;
+      }, 100); // Only run every 100ms
+    }
+  };
+
+  window.addEventListener('scroll', throttledScroll);
+  return () => window.removeEventListener('scroll', throttledScroll);
+}, []);
 
   const navbarStyle = {
     position: 'fixed',
@@ -47,23 +56,23 @@ const Navbar = () => {
     left: 0,
     right: 0,
     zIndex: 50,
-    background: isScrolled ? 'var(--primary)' : 'rgba(0, 0, 0, 0.2)',
-    backdropFilter: 'blur(16px)',
-    WebkitBackdropFilter: 'blur(16px)',
-    borderBottom: '1px solid var(--border-light)',
+    background: isScrolled ? 'var(--primary)' : 'transparent',
+    backdropFilter: isScrolled ? 'blur(16px)' :'none',
+    WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
+    borderBottom: isScrolled ? '1px solid var(--border-light)' : 'none',
     minHeight: 'clamp(1.75rem, 7vw, 2.5rem)',
     transition: 'background 0.3s ease'
   };
 
   const logoStyle = {
-    fontSize: 'clamp(0.95rem, 4vw, 1.25rem)',
+    fontSize: 'clamp(1.25rem, 4vw, 1.75rem)',
     fontWeight: 700,
     color: isScrolled ? 'var(--text-primary)' : 'rgb(255, 255, 255)',
     textDecoration: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    maxWidth: 'clamp(120px, 50vw, 400px)',
+    maxWidth: 'clamp(300px, 50vw, 400px)',
     transition: 'color 0.3s ease'
   };
 
@@ -72,7 +81,7 @@ const Navbar = () => {
     textDecoration: 'none',
     fontFamily: 'system-ui, sans-serif',
     fontSize: 'clamp(0.8rem, 1.5vw, 1rem)',
-    fontWeight: 500,
+    fontWeight: 700,
     padding: 'clamp(6px, 1vw, 12px) clamp(8px, 1.5vw, 12px)',
     borderRadius: '9999px',
     transition: 'background 0.2s ease, color 0.3s ease',
