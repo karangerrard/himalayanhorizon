@@ -62,6 +62,15 @@
   color: var(--text-primary);
 }
 
+.heading-4 {
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
 .body-large {
   font-family: system-ui, sans-serif;
   font-weight: 400;
@@ -151,15 +160,21 @@
   border-radius: 12px;
   padding: 24px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
+  cursor: default;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+img {
+  backface-visibility: hidden;
 }
 
 .product-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
   border-color: var(--border-medium);
 }
 
@@ -177,6 +192,20 @@
   padding: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .card-image-wrapper {
+    aspect-ratio: unset;
+    height: 220px;
+  }
 }
 
 /* Spacing */
@@ -221,6 +250,27 @@
   
   .product-card:hover {
     transform: translateY(-4px);
+  }
+}
+
+.per-night {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .per-night {
+    display: none;
+  }
+}
+
+.view-photos-btn {
+  /* no base styles needed here, keep your inline styles */
+}
+
+@media (min-width: 769px) {
+  .view-photos-btn {
+    padding: clamp(0.5rem, 2.8vw, 1rem) !important;
+    font-size: clamp(.75rem, 2.8vw, 1rem) !important;
   }
 }
 

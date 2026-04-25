@@ -44,47 +44,32 @@ export const cultureData = [
 export const roomsData = [
   {
     id: 1,
-    name: "Deluxe Mountain View",
-    capacity: "2-3 Guests",
-    features: ["King Size Bed", "Valley View", "Attached Bathroom", "Room Heater", "Traditional Decor"],
-    description: "Spacious room with panoramic mountain views and traditional Himachali interiors.",
-    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&h=400&fit=crop",
+    name: "Mountain View Room",
+    capacity: "2 Guests",
+    features: ["King Size Bed", "Mountain View", "Attached Bathroom", "Room Heater", "Bathroom Geyser"],
+    description: "Spacious room with panoramic mountain views and modern interiors.",
+    image: "/images/room_1.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=800&h=600&fit=crop"
+      "/images/room_1.avif",
+      "/images/room_2.avif",
+      "/images/room_3.avif",
+      "/images/room_4.avif",
+      "/images/room_5.avif"
     ]
   },
   {
     id: 2,
-    name: "Cozy Valley Room",
+    name: "Garden View Room",
     capacity: "2 Guests",
-    features: ["Queen Size Bed", "Garden View", "Modern Bathroom", "Wooden Flooring", "Work Desk"],
-    description: "Comfortable room overlooking our apple orchard and garden area.",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=400&fit=crop",
+    features: ["King Size Bed", "Garden View", "Modern Bathroom", "Bathroom Shower", "Work Desk"],
+    description: "Comfortable room overlooking garden area and mountains in the distance.",
+    image: "/images/room_6.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop"
-    ]
-  },
-  {
-    id: 3,
-    name: "Family Suite",
-    capacity: "4-5 Guests",
-    features: ["Two Bedrooms", "Living Area", "Balcony", "Two Bathrooms", "Mini Kitchen"],
-    description: "Perfect for families with separate sleeping areas and ample space.",
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&h=400&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&h=600&fit=crop"
+      "/images/room_6.avif",
+      "/images/room_7.avif",
+      "/images/room_8.avif",
+      "/images/room_9.avif",
+      "/images/room_10.avif"
     ]
   }
 ];
@@ -92,18 +77,18 @@ export const roomsData = [
 export const travelInfo = {
   byAir: {
     title: "By Air",
-    description: "Nearest airport is Bhuntar (Kullu-Manali Airport), 50 km away. Regular flights from Delhi. We can arrange pickup.",
-    distance: "50 km from airport"
+    description: "Nearest airport is Bhuntar (Kullu-Manali Airport), 43 km away. Regular flights from Delhi. We can arrange pickup.",
+    distance: "43 km from airport"
   },
   byRoad: {
     title: "By Road",
-    description: "Well-connected by road from Delhi (540 km), Chandigarh (310 km), and Shimla (250 km). Regular HRTC buses and private taxis available.",
-    routes: ["Delhi: 12-14 hours", "Chandigarh: 8-9 hours", "Shimla: 7-8 hours"],
+    description: "Well-connected by road from Delhi (453 km), Chandigarh (218 km), and Shimla (188 km). Regular HRTC buses and private taxis available.",
+    routes: ["Delhi: 8-9 hours", "Chandigarh: 4-5 hours", "Shimla: 5-6 hours"],
     distance: undefined
   },
   byTrain: {
     title: "By Train",
-    description: "Nearest railway station is Joginder Nagar (125 km). Major station at Chandigarh (310 km) with better connectivity.",
+    description: "Nearest railway station is Joginder Nagar (117 km). Major station at Chandigarh (224 km) with better connectivity.",
     distance: "125 km to nearest station"
   }
 };
