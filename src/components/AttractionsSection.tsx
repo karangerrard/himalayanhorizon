@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Image } from 'lucide-react';
 import { attractionsData } from '../data';
 import GalleryModal from './GalleryModal';
+import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 
 const AttractionsSection = () => {
   const [selectedAttraction, setSelectedAttraction] = useState(null);
@@ -35,7 +36,7 @@ const AttractionsSection = () => {
               <div
                 style={{
                   width: '100%',
-                  height: '200px',
+                  AspectRatio: '4 / 3',
                   overflow: 'hidden',
                   position: 'relative'
                 }}

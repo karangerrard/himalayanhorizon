@@ -96,86 +96,86 @@ export const travelInfo = {
 export const attractionsData = [
   {
     id: 1,
-    name: "Solang Valley",
-    distance: "14 km",
-    description: "Adventure hub for paragliding, zorbing, and skiing. Stunning valley views and cable car rides.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+    name: "Pundrik Lake",
+    distance: "2 km",
+    description: "A short hike from our homestay, this lake is surrounded by Himalayan villages, forests, and serene mountain landscapes.",
+    image: "/images/pundrik_cover.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&sat=-50",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop"
+      "/images/pundrik_1.avif",
+      "/images/pundrik_2.avif",
+      "/images/pundrik_3.avif",
+      "/images/pundrik_4.avif",
+      "/images/pundrik_5.avif"
     ]
   },
   {
     id: 2,
-    name: "Rohtang Pass",
-    distance: "51 km",
-    description: "High mountain pass offering breathtaking views. Gateway to Lahaul-Spiti valley. (Permit required)",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=400&fit=crop",
+    name: "Sari kanda Trek",
+    distance: "15-20 km",
+    description: "It is a 20km easy one-day hike, offering camping, peaceful untouched trails, Himalayan views, and beautiful experiences.",
+    image: "/images/sarikanda_cover.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?w=800&h=600&fit=crop"
+      "/images/sarikanda_1.avif",
+      "/images/sarikanda_2.avif",
+      "/images/sarikanda_3.avif",
+      "/images/sarikanda_4.avif",
+      "/images/sarikanda_5.avif"
     ]
   },
   {
     id: 3,
-    name: "Hadimba Temple",
-    distance: "8 km",
-    description: "Ancient temple dedicated to Hadimba Devi, surrounded by cedar forests. Beautiful wooden architecture.",
-    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop",
+    name: "Shangarh Meadow",
+    distance: "25 km",
+    description: "Shangarh features vast alpine grasslands, a famous Shiva temple, peaceful village charm, and breathtaking Himalayan views",
+    image: "/images/shangarh_cover.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop"
+      "/images/shangarh_1.avif",
+      "/images/shangarh_2.avif",
+      "/images/shangarh_3.avif",
+      "/images/shangarh_4.avif",
+      "/images/shangarh_5.avif"
     ]
   },
   {
     id: 4,
-    name: "Old Manali",
-    distance: "3 km",
-    description: "Charming village area with cafes, shops, and local markets. Perfect for walks and exploring local life.",
-    image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&h=400&fit=crop",
+    name: "Jibhi",
+    distance: "50 km",
+    description: "Jibhi offers waterfalls, riverside stays, pine forests, offbeat cafés, scenic hikes, and peaceful Himalayan village vibes near Tirthan Valley.",
+    image: "/images/jibhi_cover.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&h=600&fit=crop"
+      "/images/jibhi_1.avif",
+      "/images/jibhi_2.avif",
+      "/images/jibhi_3.avif",
+      "/images/jibhi_4.avif",
+      "/images/jibhi_5.avif"
     ]
   },
   {
     id: 5,
-    name: "Vashisht Hot Springs",
-    distance: "6 km",
-    description: "Natural hot water springs with temple. Therapeutic mineral waters in a scenic mountain setting.",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop",
+    name: "Kasol",
+    distance: "75 km",
+    description: "Beautiful Parvati Valley views, riverside cafés, trekking, backpacker vibes, Israeli food, scenic trails, and vibrant Himalayan culture.",
+    image: "/images/kasol_cover.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1485178575877-1a13bf489dfe?w=800&h=600&fit=crop"
+      "/images/kasol_1.avif",
+      "/images/kasol_2.avif",
+      "/images/kasol_3.avif",
+      "/images/kasol_4.avif",
+      "/images/kasol_5.avif"
     ]
   },
   {
     id: 6,
-    name: "Manikaran Sahib",
-    distance: "80 km",
-    description: "Famous pilgrimage site with hot springs. Beautiful gurudwara in Parvati Valley.",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop",
+    name: "Manali",
+    distance: "95 km",
+    description: "Manali showcases snow-capped mountains, adventure sports in Solang Valley, Rohtang Pass, cafés, temples, and lively tourist experiences.",
+    image: "/images/manali_cover.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&h=600&fit=crop"
+      "/images/manali_1.avif",
+      "/images/manali_2.avif",
+      "/images/manali_3.avif",
+      "/images/manali_4.avif",
+      "/images/manali_5.avif"
     ]
   }
 ];
