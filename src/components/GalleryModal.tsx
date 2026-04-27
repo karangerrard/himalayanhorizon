@@ -4,6 +4,21 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const GalleryModal = ({ isOpen, onClose, images, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  React.useEffect(() => {
+  if (isOpen) {
+    // Disable background scroll
+    document.body.style.overflow = 'hidden';
+  } else {
+    // Enable background scroll
+    document.body.style.overflow = 'unset';
+  }
+
+  // Cleanup: ensure scroll is re-enabled when component unmounts
+  return () => {
+    document.body.style.overflow = 'unset';
+  };
+}, [isOpen]);
+
   if (!isOpen) return null;
 
   const goToNext = () => {
@@ -82,10 +97,10 @@ const GalleryModal = ({ isOpen, onClose, images, title }) => {
               transition: 'background 0.2s ease'
             }}
             onMouseEnter={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
             }}
           >
             <X size={24} />
@@ -133,13 +148,17 @@ const GalleryModal = ({ isOpen, onClose, images, title }) => {
                   justifyContent: 'center',
                   cursor: 'pointer',
                   color: 'white',
+                  outline: 'none',
+                  userSelect: 'none',
+                  WebkitTapHighlightColor: 'transparent',
+                  boxShadow: 'none',
                   transition: 'background 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
                 }}
               >
                 <ChevronLeft size={28} />
@@ -160,13 +179,17 @@ const GalleryModal = ({ isOpen, onClose, images, title }) => {
                   justifyContent: 'center',
                   cursor: 'pointer',
                   color: 'white',
+                  outline: 'none',
+                  userSelect: 'none',
+                  WebkitTapHighlightColor: 'transparent',
+                  boxShadow: 'none',
                   transition: 'background 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
                 }}
               >
                 <ChevronRight size={28} />
