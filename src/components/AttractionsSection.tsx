@@ -30,8 +30,7 @@ const AttractionsSection = () => {
             <div
               key={attraction.id}
               className="product-card"
-              style={{ padding: 0, overflow: 'hidden', cursor: 'pointer' }}
-              onClick={() => setSelectedAttraction(attraction)}
+              style={{ padding: 0, overflow: 'hidden' }}
             >
               <div
                 style={{
@@ -49,12 +48,6 @@ const AttractionsSection = () => {
                     height: '100%',
                     objectFit: 'cover',
                     transition: 'transform 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = 'scale(1)';
                   }}
                 />
                 <span
@@ -104,15 +97,19 @@ const AttractionsSection = () => {
                   {attraction.description}
                 </p>
                 <div
+                  onClick={() => setSelectedAttraction(attraction)}
                   style={{
                     padding: '0.75rem',
                     background: 'var(--accent-text)',
                     borderRadius: '8px',
                     textAlign: 'center',
+                    cursor: 'pointer',
                     fontSize: '0.875rem',
                     fontWeight: 500,
                     color: 'rgb(255, 255, 255)',
                   }}
+                  onMouseEnter={(e) => e.target.style.transform = 'translateY(-3px)'}
+                  onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
                 >
                   Click to view gallery
                 </div>
