@@ -175,44 +175,31 @@ const GalleryModal = ({ isOpen, onClose, images, title }) => {
           )}
         </div>
 
-        {/* Thumbnail Strip */}
+        {/* Dot Indicators */}
         <div
           style={{
             display: 'flex',
-            gap: '0.75rem',
+            gap: '0.5rem',
             justifyContent: 'center',
-            overflowX: 'auto',
-            padding: '0.5rem 0'
+            padding: '1rem 0'
           }}
         >
-          {images.map((image, index) => (
+          {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
               style={{
-                border: currentIndex === index ? '3px solid var(--accent-primary)' : '3px solid transparent',
-                borderRadius: '8px',
-                padding: 0,
+                width: '12px',
+                height: '12px',
+                borderRadius: '50%',
+                border: 'none',
                 cursor: 'pointer',
-                overflow: 'hidden',
-                transition: 'border-color 0.2s ease',
-                flexShrink: 0,
-                background: 'transparent'
+                backgroundColor: currentIndex === index ? 'white' : 'rgba(255, 255, 255, 0.4)',
+                transition: 'background-color 0.2s ease',
+                padding: 0
               }}
-            >
-              <img
-                src={image}
-                alt={`Thumbnail ${index + 1}`}
-                style={{
-                  width: '80px',
-                  height: '60px',
-                  objectFit: 'cover',
-                  display: 'block',
-                  opacity: currentIndex === index ? 1 : 0.6,
-                  transition: 'opacity 0.2s ease'
-                }}
-              />
-            </button>
+              aria-label={`Go to image ${index + 1}`}
+            />
           ))}
         </div>
 

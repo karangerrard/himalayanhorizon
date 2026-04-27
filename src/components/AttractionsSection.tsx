@@ -106,12 +106,12 @@ const AttractionsSection = () => {
                 <div
                   style={{
                     padding: '0.75rem',
-                    background: 'var(--accent-wash)',
+                    background: 'var(--accent-text)',
                     borderRadius: '8px',
                     textAlign: 'center',
                     fontSize: '0.875rem',
                     fontWeight: 500,
-                    color: 'var(--accent-text)'
+                    color: 'rgb(255, 255, 255)',
                   }}
                 >
                   Click to view gallery
