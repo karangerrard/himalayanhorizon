@@ -5,7 +5,7 @@ import { formatDistance } from "date-fns";
 export const homestayInfo = {
   name: "Himalayan Horizon Deohari",
   tagline: "Peaceful Homestay in the Mountains of Himachal.",
-  description: "Nestled in the serene valleys of Himachal Pradesh, our homestay offers an authentic experience of mountain life, local culture, and warm hospitality.",
+  description: "Peaceful stay in Deohari, Himachal with authentic culture and warm hosts near the Great Himalayan National Park.",
   location: "Sainj Valley, Himachal Pradesh",
   contact: {
     phone: "+91 8091313599",

@@ -29,7 +29,7 @@ const Hero = () => {
         position: 'relative',
         textAlign: 'center',
         padding: 'clamp(4rem, 10vw, 7rem) clamp(1rem, 5vw, 1.5rem) clamp(2rem, 5vw, 3rem)',
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/punkdrik_hero.avif)',
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/desktop_hero.avif)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -51,7 +51,7 @@ const Hero = () => {
             style={{
               color: 'rgb(255, 255, 255)',
               fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
-              fontWeight: 500
+              fontWeight: 700
             }}
           >
             {homestayInfo.location}
@@ -75,6 +75,7 @@ const Hero = () => {
             color: 'rgb(255,255,255)', 
             marginBottom: 'clamp(1.5rem, 4vw, 2rem)',
             fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)',
+            fontWeight: 700,
             lineHeight: 1.6
           }}
         >
@@ -88,8 +89,9 @@ const Hero = () => {
             justifyContent: 'center',
             flexWrap: 'wrap'
           }}
+          className="hero-buttons"
         >
-          <button className="btn-primary" onClick={scrollToContact}>
+          <button className="btn-secondary" onClick={scrollToContact}>
             Book Your Stay
           </button>
           <button className="btn-secondary" onClick={scrollToGallery}>
