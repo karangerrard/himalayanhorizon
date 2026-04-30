@@ -125,6 +125,7 @@ const AttractionsSection = () => {
           onClose={() => setSelectedAttraction(null)}
           images={selectedAttraction.gallery}
           title={selectedAttraction.name}
+          startingIndex={0}
         />
       )}
     </section>

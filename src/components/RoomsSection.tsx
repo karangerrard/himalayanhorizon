@@ -155,6 +155,7 @@ const RoomsSection = () => {
           onClose={() => setSelectedRoom(null)}
           images={selectedRoom.gallery}
           title={selectedRoom.name}
+          startingIndex={0}
         />
       )}
     </section>
