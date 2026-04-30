@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import WhatsAppBookingButton from './WhatsAppBookingButton';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 import { homestayInfo } from '../data';
 
 const ContactForm = () => {
@@ -16,12 +16,37 @@ const ContactForm = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const getMinCheckoutDate = () => {
+      if (!formData.checkIn) return '';
+      const checkInDate = new Date(formData.checkIn);
+      checkInDate.setDate(checkInDate.getDate() + 1); // Add 1 day
+      return checkInDate.toISOString().split('T')[0];
   };
+
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+  
+  if (name === 'checkIn') {
+    // If user changes check-in and current checkout is now invalid, reset it
+    const newCheckIn = new Date(value);
+    newCheckIn.setDate(newCheckIn.getDate() + 1);
+    const currentCheckOut = new Date(formData.checkOut);
+    
+    if (formData.checkOut && newCheckIn > currentCheckOut) {
+      setFormData({
+        ...formData,
+        [name]: value,
+        checkOut: '' // Reset checkout if it's now earlier than check-in
+      });
+      return;
+    }
+  }
+  
+  setFormData({
+    ...formData,
+    [name]: value
+  });
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +65,41 @@ const ContactForm = () => {
         message: ''
       });
     }, 3000);
+  };
+  const whatsappNumber = homestayInfo.contact.whatsapp.replace(/\D/g, '');
+
+  const handleWhatsAppClick = () => {
+    window.open(`https://wa.me/${whatsappNumber}`, '_blank');
+  };
+  
+  const handleWhatsAppInquiry = (e) => {
+  e.preventDefault();
+  
+  // Validate required fields
+  if (!formData.name || !formData.phone || !formData.checkIn || !formData.checkOut || !formData.guests) {
+    alert('Please fill in all required fields');
+    return;
+  }
+  
+  // Format the inquiry message
+  const message = `Hello! I would like to make an inquiry about your homestay.
+
+    *Guest Details:*
+    Name: ${formData.name}
+    Phone: ${formData.phone}
+    Number of Guests: ${formData.guests}
+
+    *Stay Dates:*
+    Check-in: ${formData.checkIn || 'Not specified'}
+    Check-out: ${formData.checkOut || 'Not specified'}
+
+    *Special Requirements:*
+    ${formData.message || 'No additional requirements'}
+
+     Looking forward to hearing from you!`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
   };
 
   const inputStyle = {
@@ -112,26 +172,48 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="product-card" style={{ padding: '2rem', textAlign: 'center' }}>
+          {/* WhatsApp Card - REPLACES Email Card */}
+          <div 
+            onClick={handleWhatsAppClick}
+            className="product-card" 
+            style={{ 
+              padding: '2rem', 
+              textAlign: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              position: 'relative'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 16px rgba(37, 211, 102, 0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
             <div
               style={{
                 width: '56px',
                 height: '56px',
                 borderRadius: '50%',
-                background: 'var(--accent-wash)',
+                background: '#25d366',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '0 auto 1rem'
               }}
             >
-              <Mail size={28} style={{ color: 'var(--accent-text)' }} />
+              <MessageCircle size={28} style={{ color: 'white' }} />
             </div>
             <div className="body-small" style={{ marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>
-              Email
+              WhatsApp
             </div>
-            <div className="body-medium" style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
-              {homestayInfo.contact.email}
+            <div className="body-medium" style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.75rem' }}>
+              {homestayInfo.contact.whatsapp}
+            </div>
+            <div className="body-small" style={{ color: 'var(--accent-text)', fontStyle: 'italic' }}>
+              Click to chat on WhatsApp
             </div>
           </div>
 
@@ -189,7 +271,7 @@ const ContactForm = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
+              <form>
                 <div
                   style={{
                     display: 'grid',
@@ -212,19 +294,6 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Email *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      style={inputStyle}
-                      placeholder="your@email.com"
-                    />
-                  </div>
-
-                  <div>
                     <label style={labelStyle}>Phone *</label>
                     <input
                       type="tel"
@@ -238,12 +307,14 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Number of Guests</label>
+                    <label style={labelStyle}>Number of Guests *</label>
                     <select
                       name="guests"
                       value={formData.guests}
                       onChange={handleChange}
+                      required
                       style={inputStyle}
+                      placeholder="Select number of guests"
                     >
                       <option value="1">1 Guest</option>
                       <option value="2">2 Guests</option>
@@ -254,25 +325,34 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Check-in</label>
+                    <label style={labelStyle}>Check-in *</label>
                     <input
                       type="date"
                       name="checkIn"
                       value={formData.checkIn}
                       onChange={handleChange}
+                      required
                       style={inputStyle}
                     />
+                    <div className ="date-helper">
+                      Click the arrow to select date
+                    </div>
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Check-out</label>
+                    <label style={labelStyle}>Check-out *</label>
                     <input
                       type="date"
                       name="checkOut"
                       value={formData.checkOut}
                       onChange={handleChange}
+                      required
                       style={inputStyle}
+                      min={getMinCheckoutDate()}                     
                     />
+                    <div className ="date-helper">
+                      Click the arrow to select date
+                    </div>
                   </div>
                 </div>
 
@@ -284,16 +364,17 @@ const ContactForm = () => {
                     onChange={handleChange}
                     rows="5"
                     style={{ ...inputStyle, resize: 'vertical' }}
-                    placeholder="Any special requirements or questions?"
+                    placeholder="(Optional) Any special requirements or questions?"
                   />
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ width: '100%' }}>
-                  Send Inquiry
-                </button>
-                <div className="mt-4">
-    <WhatsAppBookingButton />
-  </div>
+                <button 
+                  onClick={handleWhatsAppInquiry}
+                  className="btn-primary" 
+                  style={{ width: '100%' }}
+                >
+                  Send Inquiry on WhatsApp
+              </button>
 </form>
             )}
           </div>

@@ -8,9 +8,9 @@ export const homestayInfo = {
   description: "Nestled in the serene valleys of Himachal Pradesh, our homestay offers an authentic experience of mountain life, local culture, and warm hospitality.",
   location: "Sainj Valley, Himachal Pradesh",
   contact: {
-    phone: "+91 98765 43210",
-    email: "info@himalayanhaven.com",
-    address: "Village Prini, Old Manali Road, Manali 175131"
+    phone: "+91 8091313599",
+    whatsapp: "+91 9999059585",
+    address: " Village Deohari P.O. Banogi Tehsil Sainj, Himachal Pradesh 175134"
   }
 };
 
