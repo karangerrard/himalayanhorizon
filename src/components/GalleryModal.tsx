@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const GalleryModal = ({ isOpen, onClose, images, title }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const GalleryModal = ({ isOpen, onClose, images, title, startingIndex }) => {
+  const [currentIndex, setCurrentIndex] = useState(startingIndex);
+
+  React.useEffect(() => {
+    setCurrentIndex(startingIndex);  // Update when startingIndex changes
+  }, [startingIndex]);
 
   React.useEffect(() => {
   if (isOpen) {

@@ -183,51 +183,59 @@ export const attractionsData = [
 export const galleryImages = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
+    coverUrl: "/images/property_1_cover.avif",  // Small cover for grid
+    fullUrl: "/images/property_1.avif",   // Large for modal
     title: "Homestay Exterior",
     category: "property"
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+    coverUrl: "/images/room_1_cover.avif",
+    fullUrl: "/images/room_1.avif",
     title: "Mountain View Room",
     category: "rooms"
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&h=600&fit=crop",
+    coverUrl: "/images/view_1_cover.avif",
+    fullUrl: "/images/view_1.avif",
     title: "Valley Views",
     category: "views"
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-    title: "Mountain Landscape",
-    category: "views"
+    coverUrl: "/images/property_2_cover.avif",
+    fullUrl: "/images/property_2.avif",
+    title: "Homestay Exterior",
+    category: "property"
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+    coverUrl: "/images/room_2_cover.avif",
+    fullUrl: "/images/room_2.avif",
     title: "Cozy Interior",
     category: "rooms"
   },
   {
     id: 6,
-    url: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop",
-    title: "Living Area",
-    category: "rooms"
-  },
-  {
-    id: 7,
-    url: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&h=600&fit=crop",
-    title: "Traditional Decor",
+    coverUrl: "/images/property_3_cover.avif",
+    fullUrl: "/images/property_3.avif",
+    title: "Homestay Exterior",
     category: "property"
   },
   {
-    id: 8,
-    url: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop",
-    title: "Snow-capped Peaks",
+    id: 7,
+    coverUrl: "/images/view_2_cover.avif",
+    fullUrl: "/images/view_2.avif",
+    title: "Mountain Views",
     category: "views"
+  },
+  {
+    id: 8,
+    coverUrl: "/images/room_11_cover.avif",
+    fullUrl: "/images/room_11.avif",
+    title: "Kitchen",
+    category: "rooms"
   }
 ];
 

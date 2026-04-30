@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { galleryImages } from '../data';
+import GalleryModal from './GalleryModal';
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImages, setModalImages] = useState([]);
+  const [modalTitle, setModalTitle] = useState('');
+  const [startingIndex, setStartingIndex] = useState(0);
 
   const categories = [
     { value: 'all', label: 'All Photos' },
@@ -12,9 +17,21 @@ const Gallery = () => {
   ];
 
   const filteredImages =
-    selectedCategory === 'all'
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === selectedCategory);
+  selectedCategory === 'all'
+    ? galleryImages
+    : galleryImages.filter((img) => img.category === selectedCategory);
+
+  const handleImageClick = (image) => {
+  const startingIndex = filteredImages.findIndex(img => img.id === image.id);
+  setModalImages(filteredImages.map(img => img.fullUrl));
+  setModalTitle(image.title);
+  setIsModalOpen(true);
+  setStartingIndex(startingIndex);  // Add this
+};
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <section
@@ -49,7 +66,7 @@ const Gallery = () => {
                 style={{
                   background:
                     selectedCategory === category.value
-                      ? 'linear-gradient(to bottom right, var(--accent-primary), var(--accent-strong))'
+                      ? 'linear-gradient(to bottom right, var(--accent-text), var(--accent-strong))'
                       : 'transparent',
                   color:
                     selectedCategory === category.value ? 'white' : 'var(--text-primary)',
@@ -93,6 +110,7 @@ const Gallery = () => {
           {filteredImages.map((image) => (
             <div
               key={image.id}
+              onClick={() => handleImageClick(image)}
               style={{
                 borderRadius: '12px',
                 overflow: 'hidden',
@@ -111,7 +129,7 @@ const Gallery = () => {
               }}
             >
               <img
-                src={image.url}
+                src={image.coverUrl}  // Use coverUrl for gallery grid
                 alt={image.title}
                 style={{
                   width: '100%',
@@ -123,6 +141,15 @@ const Gallery = () => {
           ))}
         </div>
       </div>
+
+      {/* Gallery Modal */}
+      <GalleryModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        images={modalImages}
+        title={modalTitle}
+        startingIndex={startingIndex}
+      />
     </section>
   );
 };
