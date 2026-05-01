@@ -64,7 +64,7 @@
   }
 
   gradient-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/mobile_hero.avif) !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--hero-mobile) !important;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;

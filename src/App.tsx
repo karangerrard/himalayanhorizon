@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,6 +12,12 @@ import Footer from './components/Footer';
 import DirectionsSection from './components/DirectionsSection';
 
 function App() {
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--hero-mobile',
+      `url('${import.meta.env.BASE_URL}images/mobile_hero.avif')`
+    );
+  }, []);
   return (
     <div className="App">
       <Navbar />
