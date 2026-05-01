@@ -3,6 +3,9 @@ import { MapPin } from 'lucide-react';
 import { homestayInfo } from '../data';
 
 const Hero = () => {
+  
+  const desktop_hero_Path = `${import.meta.env.BASE_URL}images/desktop_hero.avif`
+
   const scrollToContact = () => {
     const element = document.querySelector('#contact');
     if (element) {
@@ -29,7 +32,7 @@ const Hero = () => {
         position: 'relative',
         textAlign: 'center',
         padding: 'clamp(4rem, 10vw, 7rem) clamp(1rem, 5vw, 1.5rem) clamp(2rem, 5vw, 3rem)',
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/images/desktop_hero.avif)',
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(${desktop_hero_Path})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

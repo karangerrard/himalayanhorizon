@@ -6,6 +6,7 @@ import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 
 const RoomsSection = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const BASE_URL = import.meta.env.BASE_URL;
 
   return (
     <section
@@ -41,7 +42,7 @@ const RoomsSection = () => {
                 }}
               >
                 <img
-                  src={room.image}
+                  src={`${BASE_URL}${room.image.slice(1)}`}
                   alt={room.name}
                   style={{
                     width: '100%',
@@ -153,7 +154,7 @@ const RoomsSection = () => {
         <GalleryModal
           isOpen={!!selectedRoom}
           onClose={() => setSelectedRoom(null)}
-          images={selectedRoom.gallery}
+          images={selectedRoom.gallery.map(img => `${BASE_URL}${img.slice(1)}`)}
           title={selectedRoom.name}
           startingIndex={0}
         />

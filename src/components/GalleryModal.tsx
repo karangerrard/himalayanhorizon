@@ -3,6 +3,7 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const GalleryModal = ({ isOpen, onClose, images, title, startingIndex }) => {
   const [currentIndex, setCurrentIndex] = useState(startingIndex);
+  const scrollPositionRef = React.useRef(0);
 
   React.useEffect(() => {
     setCurrentIndex(startingIndex);  // Update when startingIndex changes
@@ -10,16 +11,23 @@ const GalleryModal = ({ isOpen, onClose, images, title, startingIndex }) => {
 
   React.useEffect(() => {
   if (isOpen) {
-    // Disable background scroll
+    const scrollY = window.scrollY;
+    document.body.style.top = `-${scrollY}px`; 
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
   } else {
-    // Enable background scroll
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
   }
 
-  // Cleanup: ensure scroll is re-enabled when component unmounts
   return () => {
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
   };
 }, [isOpen]);
 

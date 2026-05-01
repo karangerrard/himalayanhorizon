@@ -16,14 +16,18 @@ const Gallery = () => {
     { value: 'views', label: 'Views' }
   ];
 
+  const BASE_URL = import.meta.env.BASE_URL;
+  const scrollPositionRef = React.useRef(0);
+
   const filteredImages =
   selectedCategory === 'all'
     ? galleryImages
     : galleryImages.filter((img) => img.category === selectedCategory);
 
   const handleImageClick = (image) => {
+  scrollPositionRef.current = window.scrollY;
   const startingIndex = filteredImages.findIndex(img => img.id === image.id);
-  setModalImages(filteredImages.map(img => img.fullUrl));
+  setModalImages(filteredImages.map(img => `${BASE_URL}${img.fullUrl.slice(1)}`));
   setModalTitle(image.title);
   setIsModalOpen(true);
   setStartingIndex(startingIndex);  // Add this
@@ -31,6 +35,9 @@ const Gallery = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setTimeout(() => {
+    window.scrollTo(0, scrollPositionRef.current);  // ← restore after modal closes
+  }, 0);
   };
 
   return (
@@ -129,7 +136,7 @@ const Gallery = () => {
               }}
             >
               <img
-                src={image.coverUrl}  // Use coverUrl for gallery grid
+                src={`${BASE_URL}${image.coverUrl.slice(1)}`}  // Use coverUrl for gallery grid
                 alt={image.title}
                 style={{
                   width: '100%',

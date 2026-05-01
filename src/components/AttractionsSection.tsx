@@ -6,6 +6,7 @@ import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 
 const AttractionsSection = () => {
   const [selectedAttraction, setSelectedAttraction] = useState(null);
+  const BASE_URL = import.meta.env.BASE_URL;
 
   return (
     <section
@@ -41,7 +42,7 @@ const AttractionsSection = () => {
                 }}
               >
                 <img
-                  src={attraction.image}
+                  src={`${BASE_URL}${attraction.image.slice(1)}`}
                   alt={attraction.name}
                   style={{
                     width: '100%',
@@ -123,7 +124,7 @@ const AttractionsSection = () => {
         <GalleryModal
           isOpen={!!selectedAttraction}
           onClose={() => setSelectedAttraction(null)}
-          images={selectedAttraction.gallery}
+          images={selectedAttraction.gallery.map(img => `${BASE_URL}${img.slice(1)}`)}
           title={selectedAttraction.name}
           startingIndex={0}
         />
