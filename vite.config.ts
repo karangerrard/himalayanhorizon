@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
+  base:"/himalayanhorizon/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -13,5 +14,9 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 3000,
   },
-  build: { outDir: 'dist' }
+  build: { 
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser' 
+  }
 })
