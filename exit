@@ -1,0 +1,137 @@
+[33mcommit 89fe9232a58a3c00080a21c0df0470cf70bf7ae7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat May 2 01:13:07 2026 +0530
+
+    Added CNAME file and vite config changes for custom domain
+
+[33mcommit 62b8df9a13e84cb55fdb0ff8c9c6c4974897dbd5[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat May 2 00:18:12 2026 +0530
+
+    Changed the absolute paths of the images in all these sections as github pages do not take absolute paths, so made them dynamic, also removed the background scroll when gallery modal is open
+
+[33mcommit 7c56e5f2f4c12e373f8e17ccaef2c3b9531b6c62[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat May 2 00:14:52 2026 +0530
+
+    Added configuration of github pages to the project
+
+[33mcommit c6b0804b1a27c8b7655bd3037779b45cedfc1472[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat May 2 00:12:31 2026 +0530
+
+    Installed new packages and added dist folder to gitignore
+
+[33mcommit cc9dc1c51d19c4844b4cf7e922ae81c2ec6a5845[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat May 2 00:07:45 2026 +0530
+
+    Made the URL for mobile hero image as dynamic
+
+[33mcommit cf2aa44c52169f9b00bd95e597297571278d3615[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Fri May 1 05:09:50 2026 +0530
+
+    Updated the gradient style of hero section for more clarity
+
+[33mcommit b75efd96857a06ac58d64f312cde8a8f52e89703[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Fri May 1 04:59:50 2026 +0530
+
+    Changed the alignment , font size , the button sizes and hero images for both desktop and mobile screens
+
+[33mcommit bcc262db53ec83d1e4d23791a1bc4dd330fe450b[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Fri May 1 03:53:22 2026 +0530
+
+    Made a little whatsapp icon change on contact us section, Modified the footer section a lot, removed the quick link options from the footer
+
+[33mcommit 2e5da68003f7cdbe3279920ff01188365e9dde2f[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Fri May 1 02:44:18 2026 +0530
+
+    Updated the contact us section , contact form and added whatsapp card
+
+[33mcommit 031e5b6af3a803a11944fa399c805c2ca08eeff9[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Fri May 1 02:41:36 2026 +0530
+
+    Updated the gallery modal for one parameter
+
+[33mcommit 8cae3fdfe76485180185e01243282f578405ef29[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Fri May 1 00:24:28 2026 +0530
+
+    Added photos for the gallery section , changed gallery section modal to click from any image and added cover image urls also
+
+[33mcommit 6793d38257df8069c6e3e6cc5ba6133758c749b0[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Mon Apr 27 17:33:45 2026 +0530
+
+    Made changes to gallery modal nvaigation buttons and cross buttonn
+
+[33mcommit 7dd67572aed8c550b61f066fb716be5de1db234e[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Mon Apr 27 17:11:38 2026 +0530
+
+    Made the whole card unclickable, just the button is clickable now
+
+[33mcommit 59444aa289cb74b21d5ade8861565bb3943e2dd1[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Mon Apr 27 15:57:15 2026 +0530
+
+    Removed the thumbnails from gallery modal and changed the color of the button to darkish green
+
+[33mcommit baa5943477adb1015515dc879f39737ffa6648f2[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Mon Apr 27 00:45:52 2026 +0530
+
+    Added all the photos for attractions section and made changes to the data file and changed the aspect ratio in attractions section.tsx
+
+[33mcommit 0952d0c72ebdf791a700f35cd6e72c648c0997b2[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat Apr 25 22:55:39 2026 +0530
+
+    Made some changes to Rooms section, added photos , added prices and changed the button style to view room images
+
+[33mcommit 4fa4610742af99bbcfd9a6cd64c2329421025842[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat Apr 25 22:53:47 2026 +0530
+
+    Changed the font weight of the navbar, made the navbar transparent and on scroll it will appear as blur
+
+[33mcommit f9a21e15916de7cc532395843692e0bacdbeb260[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat Apr 25 22:50:07 2026 +0530
+
+    Added some browser packages
+
+[33mcommit 45c5a98e96f23b9dcabbdd4384c4e845c91f89fa[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat Apr 25 22:46:53 2026 +0530
+
+    Added configuration for dev server for mobile debugging
+
+[33mcommit 74593b6e955a35a70237c328d6411e491552fa64[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat Apr 25 22:42:25 2026 +0530
+
+    Slightly changed the gradient of hero section image
+
+[33mcommit 19c0e8c63c51c153da0c2976a63eddbe76f30086[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Sat Apr 25 22:28:45 2026 +0530
+
+    Changed the distances to exact distance and added google maps section with embedded excat location of the place
+
+[33mcommit 65d2df7441ad4079eabcaf24f2023ce406b7bdb5[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Wed Apr 22 19:31:27 2026 +0530
+
+    Made changes to Hero section and NAvigation bar , changes to the background color and font color.Changed the name of Directions section and the subsequent files. Also changed the name of data.ts file
+
+[33mcommit f3104083e0c26837aa07ea5b7b2a642a204ba529[m
+Author: karan gerrard <karan.gerrard@gmail.com>
+Date:   Wed Apr 22 15:27:16 2026 +0530
+
+    initial commit

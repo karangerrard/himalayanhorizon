@@ -25,7 +25,6 @@ const Gallery = () => {
     : galleryImages.filter((img) => img.category === selectedCategory);
 
   const handleImageClick = (image) => {
-  scrollPositionRef.current = window.scrollY;
   const startingIndex = filteredImages.findIndex(img => img.id === image.id);
   setModalImages(filteredImages.map(img => `${BASE_URL}${img.fullUrl.slice(1)}`));
   setModalTitle(image.title);
@@ -35,9 +34,6 @@ const Gallery = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => {
-    window.scrollTo(0, scrollPositionRef.current);  // ← restore after modal closes
-  }, 0);
   };
 
   return (

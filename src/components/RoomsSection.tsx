@@ -7,6 +7,17 @@ import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 const RoomsSection = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const BASE_URL = import.meta.env.BASE_URL;
+  //const scrollPositionRef = React.useRef(0);
+
+  
+const handleViewPhotos = (room) => {
+  setSelectedRoom(room);
+};
+
+  
+const handleCloseModal = () => {
+  setSelectedRoom(null);
+};
 
   return (
     <section
@@ -122,7 +133,7 @@ const RoomsSection = () => {
                     Price : 1100Rs<span className="per-night" >/night</span>
                   </h4>
                   <button
-                    onClick={() => setSelectedRoom(room)}
+                    onClick={() => handleViewPhotos(room)}
                     className="view-photos-btn"
                     style={{
                       padding: 'clamp(0.5rem, 2vw, 0.75rem)',
@@ -153,7 +164,7 @@ const RoomsSection = () => {
       {selectedRoom && (
         <GalleryModal
           isOpen={!!selectedRoom}
-          onClose={() => setSelectedRoom(null)}
+          onClose={handleCloseModal}
           images={selectedRoom.gallery.map(img => `${BASE_URL}${img.slice(1)}`)}
           title={selectedRoom.name}
           startingIndex={0}

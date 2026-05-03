@@ -10,25 +10,8 @@ const GalleryModal = ({ isOpen, onClose, images, title, startingIndex }) => {
   }, [startingIndex]);
 
   React.useEffect(() => {
-  if (isOpen) {
-    const scrollY = window.scrollY;
-    document.body.style.top = `-${scrollY}px`; 
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-  } else {
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.top = '';
-  }
-
-  return () => {
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.top = '';
-  };
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+  return () => { document.body.style.overflow = ''; };
 }, [isOpen]);
 
   if (!isOpen) return null;
@@ -60,7 +43,9 @@ const GalleryModal = ({ isOpen, onClose, images, title, startingIndex }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem'
+        padding: '2rem',
+        touchAction: 'none',
+        overscrollBehavior: 'contain'
       }}
       onClick={handleBackdropClick}
     >
