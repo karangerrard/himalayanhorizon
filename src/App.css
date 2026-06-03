@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
 :root {
   /* Backgrounds - Clean & Minimal */
   --bg-page: #FFFFFF;
@@ -378,4 +380,28 @@ body, html {
   max-width: 100%;
   margin: 0;
   padding: 0;
+}
+
+.nav-desktop   { display: flex !important; align-items: center; gap: clamp(1rem, 2.2vw, 1.75rem); }
+.nav-hamburger { display: none !important; }
+.nav-mobile-drawer { display: flex; flex-direction: column; }
+
+@media (max-width: 767px) {
+  .nav-desktop   { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+}
+
+.nav-hamburger:active,
+.nav-mobile-drawer a:active,
+.nav-mobile-drawer button:active {
+  transform: scale(0.96) !important;
+  opacity: 0.8 !important;
+}
+
+.nav-mobile-drawer { display: none !important; }
+
+@media (max-width: 767px) {
+  .nav-desktop       { display: none !important; }
+  .nav-hamburger     { display: flex !important; }
+  .nav-mobile-drawer { display: flex !important; flex-direction: column; }
 }
