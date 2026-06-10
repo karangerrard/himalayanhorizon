@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage — highest priority -->
+  <url>
+    <loc>https://himalayanhorizondeohari.in/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://himalayanhorizondeohari.in/images/desktop_hero.avif</image:loc>
+      <image:title>Himalayan Horizon Deohari — Homestay in Sainj Valley, Himachal Pradesh</image:title>
+      <image:caption>Scenic mountain view from Himalayan Horizon Deohari, a peaceful homestay in Deohari village, Sainj Valley</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

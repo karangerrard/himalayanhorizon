@@ -1,0 +1,12 @@
+# robots.txt for Himalayan Horizon Deohari
+# https://himalayanhorizondeohari.in
+
+User-agent: *
+Allow: /
+
+# Block crawling of build artifacts
+Disallow: /assets/*.js$
+Disallow: /assets/*.css$
+
+# Sitemap location
+Sitemap: https://himalayanhorizondeohari.in/sitemap.xml
