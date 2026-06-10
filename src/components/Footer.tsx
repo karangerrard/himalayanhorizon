@@ -64,22 +64,22 @@ const Footer = () => {
                   width: '50px',
                   height: '50px',
                   borderRadius: '50%',
-                  border: '1px solid var(--accent-text)',
+                  border: 'none',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: 'var(--accent-text)',
-                  transition: 'all 0.2s ease'
+                  background: 'linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                  color: 'white',
+                  transition: 'all 0.2s ease',
+                  cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--accent-primary)';
-                  e.currentTarget.style.background = 'var(--accent-wash)';
-                  e.currentTarget.style.color = 'var(--accent-text)';
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(224, 108, 131, 0.4)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--accent-text)';
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = 'var(--accent-text)';
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 <Instagram size={30} />
