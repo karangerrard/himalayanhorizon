@@ -10,6 +10,9 @@ import Gallery from './components/Gallery';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import DirectionsSection from './components/DirectionsSection';
+import { ServerOff } from 'lucide-react';
+import SEO from './components/SEO';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   useEffect(() => {
@@ -20,6 +23,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <SEO />
       <Navbar />
       <Hero />
       <RoomsSection />
@@ -28,6 +32,7 @@ function App() {
       <Gallery />
       <ContactForm />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
