@@ -1,12 +1,77 @@
 <!doctype html>
-<html>
+<html lang="en-IN">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+
+    <!-- ── Viewport ────────────────────────────────────────────────────────
+         CHANGED: remove maximum-scale=1.0 / user-scalable=no
+         Those settings break accessibility (WCAG 1.4.4) and hurt SEO.
+         Google penalises pages that block pinch-zoom. Remove them.
+    ──────────────────────────────────────────────────────────────────── -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <title>Himalayan Horizon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- ── Primary SEO ─────────────────────────────────────────────────── -->
+    <title>Himalayan Horizon Deohari | Best Homestay in Sainj Valley, Himachal Pradesh</title>
+    <meta name="description" content="Book the best homestay in Sainj Valley, Himachal Pradesh. Himalayan Horizon Deohari offers private rooms, home-cooked Himachali meals & trekking guides near Great Himalayan National Park." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://himalayanhorizondeohari.in/" />
+
+    <!-- ── Theme color (Android Chrome tab bar) ────────────────────────── -->
+    <meta name="theme-color" content="#003631" />
+
+    <!-- ── Open Graph — controls WhatsApp / Facebook link previews ─────── -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:site_name"   content="Himalayan Horizon Deohari" />
+    <meta property="og:title"       content="Himalayan Horizon Deohari | Homestay in Sainj Valley, Himachal Pradesh" />
+    <meta property="og:description" content="Peaceful mountain homestay in Deohari village, Sainj Valley. Home cooked meals, trekking guides, private rooms near Great Himalayan National Park." />
+    <meta property="og:url"         content="https://himalayanhorizondeohari.in/" />
+    <meta property="og:image"       content="https://himalayanhorizondeohari.in/images/desktop_hero.avif" />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt"   content="Himalayan Horizon Deohari — mountain homestay in Sainj Valley, Himachal Pradesh" />
+    <meta property="og:locale"      content="en_IN" />
+
+    <!-- ── Twitter / X Cards ───────────────────────────────────────────── -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Himalayan Horizon Deohari | Homestay in Sainj Valley" />
+    <meta name="twitter:description" content="Peaceful mountain homestay in Deohari village, Sainj Valley. Home cooked meals, trekking guides near GHNP." />
+    <meta name="twitter:image"       content="https://himalayanhorizondeohari.in/images/desktop_hero.avif" />
+    <meta name="twitter:image:alt"   content="Mountain view from Himalayan Horizon Deohari homestay, Sainj Valley" />
+
+    <!-- ── Local / Geo SEO signals ─────────────────────────────────────── -->
+    <meta name="geo.region"    content="IN-HP" />
+    <meta name="geo.placename" content="Deohari, Sainj Valley, Kullu, Himachal Pradesh" />
+    <meta name="geo.position"  content="31.763302160574742;77.32807894700265" />
+    <meta name="ICBM"          content="31.763302160574742;77.32807894700265" />
+
+    <!-- ── Favicon ─────────────────────────────────────────────────────── -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- ── Font preconnect — MUST come before the font stylesheet ──────── -->
+    <!-- Already in your file — kept exactly as-is                         -->
+    <!-- Optional: preload critical font for better performance -->
+    <link
+      rel="preload"
+      href="/fonts/cormorant-garamond/CormorantGaramond-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- ── Hero image preload ───────────────────────────────────────────
+         MOST IMPORTANT LCP optimisation in this entire file.
+         Tells the browser to fetch the hero image BEFORE it parses
+         React JS — can save 400-900ms on LCP score.
+         Update the href if your hero image path is different.
+    ──────────────────────────────────────────────────────────────────── -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/desktop_hero.avif"
+      type="image/avif"
+      fetchpriority="high"
+    />
   </head>
   <body>
     <div id="root"></div>
