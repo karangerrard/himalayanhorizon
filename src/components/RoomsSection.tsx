@@ -222,8 +222,17 @@ const RoomsSection: React.FC = () => {
           align-items: center;
           gap: 9px;
           color: #003631;
-          font-size: clamp(0.82rem, 1.3vw, 0.92rem);
+          font-weight: 600;
+          font-size: clamp(0.92rem, 1.3vw, 0.92rem);
           font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        .rms-amenity-bullet {
+          width: 7px;
+          height: 7px;
+          border-radius: 999px;
+          background: #5C7A76;
+          flex-shrink: 0;
         }
 
         /* ── BUTTONS ──────────────────────────────────────────────────── */
@@ -234,7 +243,7 @@ const RoomsSection: React.FC = () => {
           border: 1px solid rgba(0,54,49,0.28);
           border-radius: 8px;
           color: #003631;
-          font-size: clamp(0.82rem, 1.3vw, 1rem);
+          font-size: clamp(0.92rem, 1.3vw, 1rem);
           font-weight: 600;
           font-family: 'Cormorant Garamond', Georgia, serif;
           letter-spacing: 0.05em;
@@ -287,10 +296,10 @@ const RoomsSection: React.FC = () => {
           display: flex;
           align-items: center;
           gap: 6px;
-          font-size: 0.9rem;
+          font-size: 1rem;
           color: #6B7B78;
           font-family: 'Cormorant Garamond', Georgia, serif;
-          letter-spacing: 0.02em;
+          letter-spacing: -0.02em;
           font-weight: 600;
         }
 
@@ -298,8 +307,8 @@ const RoomsSection: React.FC = () => {
         .rms-eyebrow {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-size: clamp(0.68rem, 1.2vw, 0.78rem);
-          font-weight: 500;
-          letter-spacing: 0.18em;
+          font-weight: 600;
+          letter-spacing: 0.1em;
           text-transform: uppercase;
           color: #5C7A76;
           margin-bottom: 0.75rem;
@@ -317,13 +326,14 @@ const RoomsSection: React.FC = () => {
 
         .rms-subtitle {
           font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: clamp(1rem, 2vw, 1.4rem);
+          font-size: clamp(1.25rem, 2vw, 1.4rem);
           font-style: italic;
-          font-weight: 400;
+          font-weight: 500;
           color: #6B7B78;
           max-width: 46ch;
           margin: 0 auto;
           line-height: 1.6;
+          letter-spacing: -0.02em;
         }
 
         .rms-capacity-label {
@@ -353,8 +363,8 @@ const RoomsSection: React.FC = () => {
 
         .rms-description {
           font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: clamp(1rem, 1.6vw, 1.15rem);
-          line-height: 1.75;
+          font-size: clamp(1.15rem, 1.6vw, 1.15rem);
+          line-height: 1.5;
           color: #4A5E5B;
           margin: 0;
           font-weight: 600;
@@ -362,21 +372,21 @@ const RoomsSection: React.FC = () => {
 
         .rms-price-value {
           font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: clamp(1.5rem, 2.5vw, 2rem);
+          font-size: clamp(2rem, 2.5vw, 2.5rem);
           font-weight: 600;
           color: #003631;
           line-height: 1;
         }
 
         .rms-price-unit {
-          font-size: 0.9rem;
+          font-size: 1rem;
           font-weight: 600;
           color: #6B7B78;
           margin-left: 4px;
         }
 
         .rms-price-note {
-          font-size: 0.85rem;
+          font-size: .95rem;
           color: #8A9B98;
           margin: 5px 0 0;
           font-family: 'Cormorant Garamond', Georgia, serif;
@@ -433,7 +443,7 @@ const RoomsSection: React.FC = () => {
               <div className="rms-capacity-label">
                 <Users size={15} strokeWidth={1.8} color="#5C7A76" />
                 <span className="rms-capacity-text">
-                  Up to {room.capacity} Guests per Room
+                  Maximum 3 Guests per Room
                 </span>
               </div>
               <h3 className="rms-room-name">{room.name}</h3>
@@ -448,9 +458,7 @@ const RoomsSection: React.FC = () => {
             <div className="rms-amenities">
               {room.features.map((feature: string) => (
                 <div key={feature} className="rms-amenity">
-                  <span style={{ color: '#5C7A76', flexShrink: 0 }}>
-                    {getIcon(feature)}
-                  </span>
+                  <span className="rms-amenity-bullet" />
                   {feature}
                 </div>
               ))}
@@ -468,7 +476,7 @@ const RoomsSection: React.FC = () => {
             }}>
               <div>
                 <div className="rms-price-value">
-                  ₹1,100
+                  ₹1,200
                   <span className="rms-price-unit">/ night</span>
                 </div>
                 <p className="rms-price-note">Per room · Best rate direct</p>
@@ -500,7 +508,7 @@ const RoomsSection: React.FC = () => {
         {/* ── Trust strip ───────────────────────────────────────────────── */}
         <div className="rms-trust">
           {[
-            'Home cooked meals (extra charge)',
+            'Home cooked meals (Chargeable)',
             'Free Wi-Fi in rooms',
             'Book direct for best rates',
           ].map(label => (

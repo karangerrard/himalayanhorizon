@@ -46,7 +46,7 @@ export const roomsData = [
     id: 1,
     name: "Mountain View Room",
     capacity: "2 Guests",
-    features: ["King Size Bed", "Mountain View", "Attached Bathroom", "Room Heater", "Bathroom Geyser"],
+    features: ["King Size Bed", "Mountain View", "Attached Bathroom", "Room Heater", "Bathroom Geyser", "Work Desk", "Laundry (Chargeable)", "Extra Bed (Chargeable)"],
     description: "Spacious room with panoramic mountain views and modern interiors.",
     image: "/images/room_1.avif",
     gallery: [
